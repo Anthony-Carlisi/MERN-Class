@@ -1,3 +1,4 @@
 {
-    "mongoURI": "mongodb+srv://root:vIteCGKGQZlzYMzb@cluster0.geegl.mongodb.net/Mern-Class?retryWrites=true&w=majority"
+  "mongoURI": "mongodb+srv://root:vIteCGKGQZlzYMzb@cluster0.geegl.mongodb.net/Mern-Class?retryWrites=true&w=majority",
+  "jwtSecret": "P@$$w0rd321@AC"
 }

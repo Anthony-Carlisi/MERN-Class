@@ -5,7 +5,9 @@ const gravatar = require('gravatar');
 // Dependency for encrypting fields
 const bcrypt = require('bcryptjs');
 // Dependency for cookie tokens in browers cache
-//const jwt = require('');
+const jwt = require('jsonwebtoken');
+// Adding default.json from config for the jwtSecert
+const config = require('config');
 // Dependency for validating fields
 const { check, validationResult } = require('express-validator');
 // Pulls the user model for the db
@@ -74,9 +76,23 @@ router.post(
       // Finally saves the user
       await user.save();
 
-      // Return jsonwebtoken
-
-      res.send('User Registered');
+      // Payload consistering of the users ID
+      const payload = {
+        user: {
+          id: user.id,
+        },
+      };
+      // JWT token sends the payload and gets the jwtSecert 
+      // Then expiration is passed through and the token is returned in the callback
+      jwt.sign(
+        payload,
+        config.get('jwtSecret'),
+        { expiresIn: 360000 },
+        (err, token) => {
+          if (err) throw err;
+          res.json({ token });
+        }
+      );
     } catch (err) {
       console.error(err.message);
       return res.status(500).send('Server error');
