@@ -1,4 +1,6 @@
 {
   "mongoURI": "mongodb+srv://root:vIteCGKGQZlzYMzb@cluster0.geegl.mongodb.net/Mern-Class?retryWrites=true&w=majority",
-  "jwtSecret": "P@$$w0rd321@AC"
+  "jwtSecret": "P@$$w0rd321@AC",
+  "githubClientId": "511d45190172276398ba",
+  "githubSecret": "221ae310d43e139109115ca605adf783be0e0d24"
 }
