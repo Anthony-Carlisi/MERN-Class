@@ -102,7 +102,7 @@ router.delete('/:id', auth, async (req, res) => {
   }
 });
 
-// @route   Pu api/posts/like/:id
+// @route   PUT api/posts/like/:id
 // @desc    Like a post
 // @access  Private
 router.put('/like/:id', auth, async (req, res) => {

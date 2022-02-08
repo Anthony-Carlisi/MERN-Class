@@ -1,12 +1,12 @@
 // Dependency for mongodb control
 const mongoose = require('mongoose');
-// Assigns the variable UserSchema to the schema for users 
+// Assigns the variable UserSchema to the schema for users
 const UserSchema = new mongoose.Schema({
   // Each field name is defined first
-    // type: establishes the type of variable
-    // required: determine when a new record is entered if the field is required
-    // unique: require for that field to be unique to other values with the same field name
-    // default: establish a default value for the field
+  // type: establishes the type of variable
+  // required: determine when a new record is entered if the field is required
+  // unique: require for that field to be unique to other values with the same field name
+  // default: establish a default value for the field
   name: {
     type: String,
     required: true,
